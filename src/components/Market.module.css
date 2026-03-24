@@ -1,0 +1,177 @@
+.section {
+  padding: 100px 48px;
+  background: linear-gradient(135deg, #eff4ee 0%, var(--warm-white) 100%);
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--sage-dark);
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.15;
+  color: var(--charcoal);
+  margin-bottom: 16px;
+}
+
+.sub {
+  font-size: 17px;
+  color: var(--warm-gray);
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 64px;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 36px;
+  border: 1px solid var(--border);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 4px;
+}
+
+.tam::after { background: var(--accent); }
+.sam::after { background: var(--sage-dark); }
+.som::after { background: var(--gold); }
+
+.acronym {
+  font-family: 'Playfair Display', serif;
+  font-size: 58px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.tam .acronym { color: var(--accent); }
+.sam .acronym { color: var(--sage-dark); }
+.som .acronym { color: var(--gold); }
+
+.full {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--warm-gray);
+  margin-bottom: 20px;
+}
+
+.value {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  color: var(--charcoal);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.cagr {
+  display: inline-block;
+  background: var(--cream);
+  border-radius: 100px;
+  padding: 4px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--sage-dark);
+  margin-bottom: 18px;
+}
+
+.desc {
+  font-size: 13px;
+  color: var(--warm-gray);
+  line-height: 1.7;
+  text-align: left;
+}
+
+/* Revenue note */
+.note {
+  margin-top: 40px;
+  background: white;
+  border-radius: 18px;
+  padding: 32px;
+  border: 1px solid var(--border);
+}
+
+.noteTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+
+.noteSub {
+  font-size: 14px;
+  color: var(--warm-gray);
+  margin-bottom: 20px;
+  line-height: 1.65;
+}
+
+.formulaTable {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formulaRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--cream);
+  border-radius: 10px;
+  padding: 12px 18px;
+}
+
+.formulaLabel {
+  font-size: 13px;
+  color: var(--warm-gray);
+  font-family: 'DM Mono', 'Courier New', monospace;
+}
+
+.formulaValue {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--sage-dark);
+  white-space: nowrap;
+  margin-left: 16px;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 64px 24px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .formulaRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}

@@ -1,0 +1,134 @@
+.footer {
+  background: var(--charcoal);
+  padding: 72px 48px 32px;
+}
+
+.top {
+  display: flex;
+  gap: 64px;
+  margin-bottom: 56px;
+}
+
+.brand {
+  max-width: 240px;
+  flex-shrink: 0;
+}
+
+.brandName {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: white;
+  margin-bottom: 14px;
+}
+
+.brandName span {
+  color: var(--sage-light);
+  font-style: italic;
+}
+
+.brandDesc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.pill {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 100px;
+  padding: 4px 14px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  flex: 1;
+}
+
+.col {}
+
+.colTitle {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+  margin-bottom: 18px;
+}
+
+.colLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.colLinks a {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.2s;
+}
+
+.colLinks a:hover {
+  color: var(--sage-light);
+}
+
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.legal {
+  display: flex;
+  gap: 20px;
+}
+
+.legal a {
+  color: rgba(255, 255, 255, 0.35);
+  transition: color 0.2s;
+}
+
+.legal a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 900px) {
+  .footer {
+    padding: 56px 24px 28px;
+  }
+
+  .top {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .brand {
+    max-width: 100%;
+  }
+
+  .cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .legal {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

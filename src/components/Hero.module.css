@@ -1,0 +1,286 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 48px 80px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--warm-white) 0%, #eff4ee 50%, var(--cream) 100%);
+}
+
+.bgCircle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 175, 136, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.content {
+  max-width: 580px;
+  z-index: 1;
+  animation: fadeUp 0.7s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid var(--sage-light);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--sage-dark);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  background: var(--sage);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.4); }
+}
+
+.heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 4.5vw, 64px);
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--charcoal);
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--sage-dark);
+}
+
+.sub {
+  font-size: 17px;
+  color: var(--warm-gray);
+  line-height: 1.75;
+  margin-bottom: 40px;
+  max-width: 480px;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+}
+
+.btnPrimary {
+  background: var(--sage-dark);
+  color: white;
+  border: none;
+  border-radius: 100px;
+  padding: 15px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.25s;
+  box-shadow: 0 4px 20px rgba(92, 122, 89, 0.3);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(92, 122, 89, 0.45);
+}
+
+.btnGhost {
+  background: transparent;
+  color: var(--charcoal);
+  border: 1.5px solid var(--border);
+  border-radius: 100px;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btnGhost:hover {
+  border-color: var(--sage);
+  background: rgba(139, 175, 136, 0.08);
+}
+
+.stats {
+  display: flex;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  border-left: 2px solid var(--sage-light);
+  padding-left: 18px;
+}
+
+.statNum {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  color: var(--sage-dark);
+  font-weight: 700;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: var(--warm-gray);
+  margin-top: 2px;
+  max-width: 130px;
+  line-height: 1.4;
+}
+
+/* Dashboard card */
+.visual {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 420px;
+  z-index: 1;
+  animation: fadeIn 0.9s ease 0.3s both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-45%) scale(0.97); }
+  to   { opacity: 1; transform: translateY(-50%) scale(1); }
+}
+
+.dashCard {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border);
+}
+
+.dashHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dashTitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--warm-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.dashBadge {
+  background: #e8f5e4;
+  color: var(--sage-dark);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+.teamRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.teamName {
+  font-size: 13px;
+  font-weight: 500;
+  flex: 1;
+  color: var(--charcoal);
+}
+
+.burnBar {
+  flex: 2;
+  height: 6px;
+  background: #f0f0f0;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.burnFill {
+  height: 100%;
+  border-radius: 100px;
+  transition: width 1s ease;
+}
+
+.burnScore {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--warm-gray);
+  width: 26px;
+  text-align: right;
+}
+
+.miniMetrics {
+  display: flex;
+  justify-content: space-between;
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-top: 14px;
+}
+
+.metricLabel {
+  font-size: 11px;
+  color: var(--warm-gray);
+  margin-bottom: 2px;
+}
+
+.metricVal {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.metricChange {
+  font-size: 11px;
+  color: var(--sage-dark);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 100px 24px 60px;
+    flex-direction: column;
+  }
+
+  .visual {
+    display: none;
+  }
+
+  .stats {
+    gap: 20px;
+  }
+}

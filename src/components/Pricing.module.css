@@ -1,0 +1,203 @@
+.section {
+  padding: 100px 48px;
+  background: var(--charcoal);
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--sage-light);
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.15;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.sub {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.7;
+  max-width: 460px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 64px;
+  align-items: start;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 36px;
+  position: relative;
+  transition: all 0.25s;
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.09);
+  transform: translateY(-4px);
+}
+
+.card.featured {
+  background: var(--sage-dark);
+  border-color: var(--sage);
+  transform: scale(1.04);
+  box-shadow: 0 24px 64px rgba(92, 122, 89, 0.45);
+}
+
+.card.featured:hover {
+  transform: scale(1.06);
+}
+
+.badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--charcoal);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 16px;
+  border-radius: 100px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.medal {
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+.planName {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 4px;
+}
+
+.price {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  color: white;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.price span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.planDesc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 10px 0 24px;
+  line-height: 1.5;
+}
+
+.features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.features li {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  line-height: 1.4;
+}
+
+.features li::before {
+  content: '✓';
+  color: var(--sage-light);
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.btn {
+  width: 100%;
+  padding: 13px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btnOutline {
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.btnOutline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.btnSolid {
+  background: white;
+  border: none;
+  color: var(--sage-dark);
+}
+
+.btnSolid:hover {
+  background: var(--cream);
+}
+
+.note {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.note strong {
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 64px 24px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card.featured {
+    transform: none;
+  }
+
+  .card.featured:hover {
+    transform: translateY(-4px);
+  }
+}
