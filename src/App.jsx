@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import Problem from './components/Problem.jsx'
@@ -8,8 +9,9 @@ import Market from './components/Market.jsx'
 import Testimonials from './components/Testimonials.jsx'
 import CTA from './components/CTA.jsx'
 import Footer from './components/Footer.jsx'
+import Signup from './pages/Signup.jsx'
 
-export default function App() {
+function LandingPage() {
   return (
     <>
       <Navbar />
@@ -23,5 +25,14 @@ export default function App() {
       <CTA />
       <Footer />
     </>
+  )
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/signup/:plan" element={<Signup />} />
+    </Routes>
   )
 }

@@ -21,7 +21,7 @@ export default function Navbar() {
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.logo}>
-        Mind<span>Shift</span>
+        Mind<span>Metric</span>
       </div>
 
       <ul className={styles.links}>

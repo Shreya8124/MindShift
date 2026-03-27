@@ -36,7 +36,7 @@ export default function Hero() {
         </h1>
 
         <p className={styles.sub}>
-          MindShift gives HR leaders and founders real-time visibility into team mental health —
+          MindMetric gives HR leaders and founders real-time visibility into team mental health —
           turning invisible stress into actionable retention strategy.
         </p>
 
