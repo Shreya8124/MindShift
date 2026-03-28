@@ -1,32 +1,60 @@
 import { useNavigate } from 'react-router-dom'
 import styles from './Pricing.module.css'
 
-const features = [
-  'Burnout surveys',
-  'Team health score',
-  'Therapy sessions',
-  'Analytics report',
-  'Manager dashboard',
-  'Workshops',
-  'ROI tracking',
-  'Dedicated support',
-  'Advanced analytics',
-  'Custom workshops',
-  'Group sessions',
-  'Executive coaching',
-]
-
 const plans = [
-  { id: 'silver', name: 'Silver', price: '₹350' },
-  { id: 'gold', name: 'Gold', price: '₹450', highlight: true },
-  { id: 'platinum', name: 'Platinum', price: '₹600' },
+  {
+    id: 'silver',
+    medal: '🥈',
+    name: 'Silver',
+    price: '₹175',
+    desc: 'Essential burnout monitoring for lean teams.',
+    features: [
+      'Burnout surveys (monthly cadence)',
+      'Basic team health score',
+      'Up to 2 support sessions/employee/month',
+      'Survey analytics report',
+      'Email support',
+    ],
+    btnLabel: 'Get Started',
+    featured: false,
+  },
+  {
+    id: 'gold',
+    medal: '🥇',
+    name: 'Gold',
+    price: '₹350',
+    desc: 'The complete platform for growing startups.',
+    features: [
+      'Weekly burnout detection engine',
+      'Live manager intelligence dashboard',
+      'Unlimited therapy + coaching sessions',
+      'Workshops (2 per quarter)',
+      'Retention & ROI tracking',
+      'Priority support + dedicated CSM',
+    ],
+    btnLabel: 'Start Free Pilot',
+    featured: false,
+  },
+  {
+    id: 'platinum',
+    medal: '💎',
+    name: 'Platinum',
+    price: '₹600',
+    desc: 'Advanced intelligence for high-growth companies.',
+    features: [
+      'Everything in Gold',
+      'Advanced behavioural analytics',
+      'Dedicated therapist pool',
+      'Custom workshop curation',
+      'Unlimited group sessions',
+      'Executive coaching add-on',
+      'White-label option available',
+    ],
+    btnLabel: 'Get Started',
+    featured: true,
+    badge: 'Best Value',
+  },
 ]
-
-const availability = {
-  silver: [true, true, true, true, false, false, false, false, false, false, false, false],
-  gold: [true, true, true, true, true, true, true, true, false, false, false, false],
-  platinum: Array(features.length).fill(true),
-}
 
 export default function Pricing() {
   const navigate = useNavigate()
@@ -39,62 +67,34 @@ export default function Pricing() {
         Per employee · per month. Fixed platform fee + variable usage. Cancel anytime.
       </p>
 
-      {/* TABLE */}
-      <div className={styles.tableWrapper}>
-        <table className={styles.pricingTable}>
-          <thead>
-            <tr>
-              <th className={styles.featureCol}>Features</th>
-              {plans.map(plan => (
-                <th
-                  key={plan.id}
-                  className={`${styles.planCol} ${plan.highlight ? styles.highlightCol : ''}`}
-                >
-                  <div className={styles.planHeader}>{plan.name}</div>
-                  <div className={styles.tablePrice}>{plan.price}</div>
-                </th>
-              ))}
-            </tr>
-          </thead>
+      <div className={styles.grid}>
+        {plans.map(plan => (
+          <div
+            className={`${styles.card} ${plan.featured ? styles.featured : ''}`}
+            key={plan.id}
+          >
+            {plan.badge && <div className={styles.badge}>{plan.badge}</div>}
+            <div className={styles.medal}>{plan.medal}</div>
+            <div className={styles.planName}>{plan.name}</div>
+            <div className={styles.price}>
+              {plan.price} <span>/ employee / month</span>
+            </div>
+            <p className={styles.planDesc}>{plan.desc}</p>
 
-          <tbody>
-            {features.map((feature, i) => (
-              <tr key={feature}>
-                <td className={styles.featureName}>{feature}</td>
-                {plans.map(plan => (
-                  <td
-                    key={plan.id}
-                    className={`${styles.tickCell} ${plan.highlight ? styles.highlightCol : ''}`}
-                  >
-                    {availability[plan.id][i] ? (
-                      <span className={styles.tick}>✓</span>
-                    ) : (
-                      <span className={styles.cross}>—</span>
-                    )}
-                  </td>
-                ))}
-              </tr>
-            ))}
-
-            {/* CTA ROW */}
-            <tr className={styles.ctaRow}>
-              <td></td>
-              {plans.map(plan => (
-                <td
-                  key={plan.id}
-                  className={`${styles.ctaCell} ${plan.highlight ? styles.highlightCol : ''}`}
-                >
-                  <button
-                    className={`${styles.tableBtn} ${plan.highlight ? styles.tableBtnPrimary : ''}`}
-                    onClick={() => navigate(`/signup/${plan.id}`)}
-                  >
-                    Choose {plan.name}
-                  </button>
-                </td>
+            <ul className={styles.features}>
+              {plan.features.map(f => (
+                <li key={f}>{f}</li>
               ))}
-            </tr>
-          </tbody>
-        </table>
+            </ul>
+
+            <button
+              className={`${styles.btn} ${plan.featured ? styles.btnSolid : styles.btnOutline}`}
+              onClick={() => navigate(`/signup/${plan.id}`)}
+            >
+              {plan.btnLabel}
+            </button>
+          </div>
+        ))}
       </div>
 
       <div className={styles.note}>
@@ -106,4 +106,3 @@ export default function Pricing() {
     </section>
   )
 }
-

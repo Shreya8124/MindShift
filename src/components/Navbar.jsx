@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import styles from './Navbar.module.css'
 
 const links = [
@@ -11,6 +12,7 @@ const links = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -32,9 +34,17 @@ export default function Navbar() {
         ))}
       </ul>
 
-      <button className={styles.cta} onClick={() => document.querySelector('#pricing').scrollIntoView({ behavior: 'smooth' })}>
-        Book a Demo
-      </button>
+      <div className={styles.navActions}>
+        <button className={styles.loginBtn} onClick={() => navigate('/login')}>
+          Log In
+        </button>
+        <button
+          className={styles.cta}
+          onClick={() => document.querySelector('#pricing').scrollIntoView({ behavior: 'smooth' })}
+        >
+          Book a Demo
+        </button>
+      </div>
 
       <button className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? '✕' : '☰'}
@@ -45,7 +55,10 @@ export default function Navbar() {
           {links.map(l => (
             <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)}>{l.label}</a>
           ))}
-          <button className={styles.cta}>Book a Demo</button>
+          <button className={styles.loginBtn} onClick={() => { navigate('/login'); setMenuOpen(false) }}>
+            Log In
+          </button>
+          <button className={styles.cta} onClick={() => setMenuOpen(false)}>Book a Demo</button>
         </div>
       )}
     </nav>

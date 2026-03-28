@@ -120,3 +120,26 @@
     text-align: center;
   }
 }
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.loginBtn {
+  background: transparent;
+  color: var(--charcoal);
+  border: 1.5px solid var(--border);
+  border-radius: 100px;
+  padding: 9px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.loginBtn:hover {
+  border-color: var(--sage-dark);
+  color: var(--sage-dark);
+  background: rgba(92, 122, 89, 0.06);
+}

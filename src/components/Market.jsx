@@ -35,41 +35,40 @@ const formulaRows = [
 
 export default function Market() {
   return (
-    console.log("testing")
-    // <section className={styles.section} id="market">
-    //   <div className={styles.label}>Market Opportunity</div>
-    //   <h2 className={styles.title}>TAM · SAM · SOM</h2>
-    //   <p className={styles.sub}>
-    //     India's mental health market is structurally underserved and digitally accelerating.
-    //     Here's exactly where we play.
-    //   </p>
+    <section className={styles.section} id="market">
+      <div className={styles.label}>Market Opportunity</div>
+      <h2 className={styles.title}>TAM · SAM · SOM</h2>
+      <p className={styles.sub}>
+        India's mental health market is structurally underserved and digitally accelerating.
+        Here's exactly where we play.
+      </p>
 
-    //   <div className={styles.grid}>
-    //     {markets.map(m => (
-    //       <div className={`${styles.card} ${styles[m.type]}`} key={m.acronym}>
-    //         <div className={styles.acronym}>{m.acronym}</div>
-    //         <div className={styles.full}>{m.full}</div>
-    //         <div className={styles.value}>{m.value}</div>
-    //         <div className={styles.cagr}>{m.cagr}</div>
-    //         <p className={styles.desc}>{m.desc}</p>
-    //       </div>
-    //     ))}
-    //   </div>
+      <div className={styles.grid}>
+        {markets.map(m => (
+          <div className={`${styles.card} ${styles[m.type]}`} key={m.acronym}>
+            <div className={styles.acronym}>{m.acronym}</div>
+            <div className={styles.full}>{m.full}</div>
+            <div className={styles.value}>{m.value}</div>
+            <div className={styles.cagr}>{m.cagr}</div>
+            <p className={styles.desc}>{m.desc}</p>
+          </div>
+        ))}
+      </div>
 
-    //   <div className={styles.note}>
-    //     <h4 className={styles.noteTitle}>📐 Revenue Model Proof — Gold Plan</h4>
-    //     <p className={styles.noteSub}>
-    //       Simple math that shows scalability without complexity. Low CAC via B2B entry → company pays → employees trust brand → B2C expansion later.
-    //     </p>
-    //     <div className={styles.formulaTable}>
-    //       {formulaRows.map(r => (
-    //         <div className={styles.formulaRow} key={r.label}>
-    //           <span className={styles.formulaLabel}>{r.label}</span>
-    //           <span className={styles.formulaValue}>{r.value}</span>
-    //         </div>
-    //       ))}
-    //     </div>
-    //   </div>
-    // </section>
+      <div className={styles.note}>
+        <h4 className={styles.noteTitle}>📐 Revenue Model Proof — Gold Plan</h4>
+        <p className={styles.noteSub}>
+          Simple math that shows scalability without complexity. Low CAC via B2B entry → company pays → employees trust brand → B2C expansion later.
+        </p>
+        <div className={styles.formulaTable}>
+          {formulaRows.map(r => (
+            <div className={styles.formulaRow} key={r.label}>
+              <span className={styles.formulaLabel}>{r.label}</span>
+              <span className={styles.formulaValue}>{r.value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }

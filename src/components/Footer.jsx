@@ -15,7 +15,7 @@ const cols = [
   },
   {
     title: 'Connect',
-    links: ['hello@metric.in', 'LinkedIn', 'Twitter / X', 'Book a Demo', 'Partner Program'],
+    links: ['hello@mindshift.in', 'LinkedIn', 'Twitter / X', 'Book a Demo', 'Partner Program'],
   },
 ]
 
@@ -25,7 +25,7 @@ export default function Footer() {
       <div className={styles.top}>
         <div className={styles.brand}>
           <div className={styles.brandName}>
-            Mind<span>Shift</span>
+            Mind<span>Metric</span>
           </div>
           <p className={styles.brandDesc}>
             Workplace mental health intelligence for companies that care about retention,
@@ -51,7 +51,7 @@ export default function Footer() {
       </div>
 
       <div className={styles.bottom}>
-        <span>© 2025 MindMetric Technologies Pvt. Ltd. All rights reserved.</span>
+        <span>© 2025 MindShift Technologies Pvt. Ltd. All rights reserved.</span>
         <div className={styles.legal}>
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>

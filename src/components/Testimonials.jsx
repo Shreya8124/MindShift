@@ -2,7 +2,7 @@ import styles from './Testimonials.module.css'
 
 const testimonials = [
   {
-    text: "We lost three senior engineers in one quarter. I had no data, no warning. MindMetric would have flagged the Engineering team's burnout score weeks earlier.",
+    text: "We lost three senior engineers in one quarter. I had no data, no warning. MindShift would have flagged the Engineering team's burnout score weeks earlier.",
     name: 'Riya Sharma',
     role: 'CTO, Series A Startup · Mumbai',
     color: '#8BAF88',
